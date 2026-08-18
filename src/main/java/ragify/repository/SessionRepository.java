@@ -11,6 +11,6 @@ public interface SessionRepository extends JpaRepository<Session, Long> {
     List<Session> findAllByWorkspaceIdOrderByCreatedAtDesc(Long workspaceId);
 
     @Modifying
-    @Query("DELETE FROM session s WHERE s.workspaceId = :workspaceId")
+    @Query("DELETE FROM Session s WHERE s.workspaceId = :workspaceId")
     int deleteAllByWorkspaceId(@Param("workspaceId") Long workspaceId);
 }
