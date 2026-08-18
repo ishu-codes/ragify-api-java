@@ -35,3 +35,10 @@ out/
 
 ### VS Code ###
 .vscode/
+.zed/
+
+# Storage files
+storage/
+
+# gRPC generated files
+src/main/java/ragify/v1/
