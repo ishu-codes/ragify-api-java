@@ -24,8 +24,14 @@ The schema is created automatically at startup from `src/main/resources/schema.s
 ## Build / test
 
 ```bash
-./gradlew build
+./gradlew test             # unit tests (JUnit 5 + Mockito)
+./gradlew integrationTest  # H2-backed repository and HTTP integration tests
+./gradlew check            # runs both suites and generates coverage
 ```
+
+Integration tests use an in-memory H2 database in PostgreSQL compatibility mode, so they do not
+require the Docker infrastructure or a running gRPC server. JaCoCo writes HTML and XML coverage
+reports to `build/reports/jacoco/test/`.
 
 ## Endpoints
 
